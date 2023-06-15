@@ -31,11 +31,11 @@ Hier wird der code ausgeführt
 
 Definition einer 
 
-<details> <summary> data class "Movie" </summary>
+<details> <summary style="border:1px solid orange"> data class "Movie" </summary>
 Dies ist eine Class in der wir Strings definiren die wir jeder Zeit abrufen können über die class
 </details>
-
-<details><summary>Val "movielist"</summary>
+<p>
+<details><summary style="border:1px solid green">Val "movielist"</summary>
 die eine Liste erstellt
 </details>
 
