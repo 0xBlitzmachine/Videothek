@@ -3,12 +3,12 @@ fun randomRating(): Int{
 }
 
 fun randomPrice(): Double {
-    return (2..5).random().toDouble()
+    return (2..10).random().toDouble()
 }
 
 fun generateRatings(): MutableList<Int> {
     val ratings = mutableListOf<Int>()
-    repeat((1..10).random()) {
+    repeat((5..30).random()) {
         ratings.add(randomRating())
     }
     return ratings
