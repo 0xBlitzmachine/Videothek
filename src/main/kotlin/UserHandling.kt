@@ -1,9 +1,19 @@
-val userDatabase = mutableMapOf<Int, User>()
+class UserHandling {
+    private var userDatabase = mutableMapOf<Int, User>()
 
-fun registerUser(user: User): String {
-    if (userDatabase.isEmpty())
-        userDatabase[0] = user
-    else
-        userDatabase[userDatabase.keys.max() + 1] = user
-    return Message.ADD_USER_SUCCESS.value.format(user.username)
+
+    fun getAllUser(): Map<Int, User> {
+        return userDatabase.toMap()
+    }
+
+    fun addUser(user: User) {
+        return if (userDatabase.keys.max() == 0) userDatabase[1] = user
+        else userDatabase[userDatabase.keys.max().plus(1)] = user
+    }
+
+    fun removeUserById(userId: Int): Boolean {
+        if (!userDatabase.containsKey(userId)) return false
+        userDatabase.remove(userId); return true
+    }
 }
+

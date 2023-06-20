@@ -1,6 +1,8 @@
 data class User(
-    var username: String,
-    var password: String,
-    var age: Int,
-    var isAdmin: Boolean = false,
+    val id: Int,
+    val username: String,
+    val age: Int,
+    val email: String,
+    val password: String,
+    val balance: Double
 )

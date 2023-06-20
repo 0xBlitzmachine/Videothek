@@ -1,8 +1,9 @@
 data class Movie(
+    var id: Int,
     var moviename: String,
     var genre: String?,
     var price: Double?,
-    var ratings: List<Int>?
+    var ratings: List<Int>
 )
 
 val movieList = listOf<String>(
