@@ -1,11 +1,6 @@
-data class Movie(
-    var id: Int,
-    var moviename: String,
-    var genre: String?,
-    var price: Double?,
-    var ratings: List<Int>
-)
+class Movie {
 
+}
 val movieList = listOf<String>(
     "The Dark Knight",
     "Indiana Jones",
