@@ -1,6 +1,4 @@
-package classCollection
-
-import Movie
+package ClassCollection
 
 class User(
     private var email: String,
@@ -33,6 +31,7 @@ class User(
         this.email = newEmail
     }
 
+    // Return an Boolean; True -> Success | False -> Failed (User HAS TO verify his old password)
     fun changePassword(oldPassword: String, newPassword: String): Boolean {
         return if (this.password != oldPassword) false
         else { this.password = newPassword; true }
@@ -73,5 +72,9 @@ class User(
 
     fun addMovie(movie: Movie) {
         this.library?.add(movie)
+    }
+
+    fun changeAdminProperty(boolean: Boolean) {
+        this.isAdmin = boolean
     }
 }

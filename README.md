@@ -22,16 +22,16 @@ Hier wird der code ausgeführt
 </details>
 
 
-<!-- Movie.kt erklärung🔽
+<!-- ClassCollection.Movie.kt erklärung🔽
     ------------------- -->
 
 <details>
 
-<summary style=color:purple;>Movie.Kt</summary>
+<summary style=color:purple;>ClassCollection.Movie.Kt</summary>
 
 Definition einer 
 
-<details> <summary style="border:1px solid orange"> data class "Movie" </summary>
+<details> <summary style="border:1px solid orange"> data class "ClassCollection.Movie" </summary>
 Dies ist eine Class in der wir Strings definiren die wir jeder Zeit abrufen können über die class
 </details>
 <p>
@@ -41,5 +41,5 @@ die eine Liste erstellt
 
 </details>
 
-<!--Todo classCollection.User Interaktion
+<!--Todo ClassCollection.User Interaktion
     Login/Registration -->
