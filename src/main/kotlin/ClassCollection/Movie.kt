@@ -1,8 +1,8 @@
 package ClassCollection
 
-class Movie(private var name: String) {
-    private var id: Int = 0
-    private var price: Double? = null
+class Movie(var name: String) {
+    var id: Int = 0
+    var price: Double? = null
 
     init {
         // Auto Increment of Identity Number
