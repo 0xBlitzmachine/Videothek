@@ -14,10 +14,12 @@ class User(
         this.username = username
     }
 
+    // For Testing purpose later!
     constructor(email: String, password: String, isAdmin: Boolean) : this(email, password) {
         this.isAdmin = isAdmin
     }
 
+    // For Testing purpose later!
     constructor(email: String, password: String, username: String, isAdmin: Boolean) : this(email, password) {
         this.username = username
         this.isAdmin = isAdmin

@@ -8,13 +8,21 @@ class UserDatabase {
     }
 
     fun addUser(user: User): Boolean {
-        if (getUserByEmail(user.email) != null) return false
-        userCollection += user; return true
+        return if (getUserByEmail(user.email) != null)
+            false
+        else {
+            userCollection += user
+            true
+        }
     }
 
     fun removeUser(user: User): Boolean {
-        if (getUserByEmail(user.email) == null) return false
-        userCollection -= user; return true
+        return if (getUserByEmail(user.email) == null)
+            false
+        else {
+            userCollection -= user
+            true
+        }
     }
 
     fun login(email: String, password: String): User? {

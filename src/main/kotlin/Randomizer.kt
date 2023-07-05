@@ -1,16 +1,10 @@
-fun randomRating(): Int{
-    return (1..5).random()
-}
-
-fun randomPrice(): Double {
-    return (2..10).random().toDouble()
+fun generatePrice(min: Int = 2, max: Int = 10): Double {
+    return (min..max).random() + (0..99).random() / 100.0
 }
 
 fun generateRatings(): MutableList<Int> {
     val ratings = mutableListOf<Int>()
-    repeat((5..30).random()) {
-        ratings.add(randomRating())
-    }
+    repeat((5..30).random()) { ratings.add((1..5).random()) }
     return ratings
 }
 
