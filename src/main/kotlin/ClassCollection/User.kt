@@ -2,13 +2,13 @@ package ClassCollection
 
 class User(
     var email: String,
-    var password: String
+    private var password: String
 ) {
-    var isAdmin = false
+    private var library: MutableList<Movie> = mutableListOf()
+    private var isAdmin = false
+    private var balance = 0.0
     var username: String? = null
-    var balance = 0.0
-    var age: Int? = null
-    private var library: MutableList<Movie>? = null
+    var age: Int = 0
 
     constructor(email: String, password: String, username: String) : this(email, password) {
         this.username = username
@@ -23,16 +23,7 @@ class User(
         this.isAdmin = isAdmin
     }
 
-    fun increaseBalance(amount: Double) {
-        this.balance += amount
-    }
-
-    fun decreaseBalance(amount: Double): Boolean {
-        return if (amount > this.balance) false
-        else { this.balance -= amount; true }
-    }
-
-    fun addMovie(movie: Movie) {
-        this.library?.add(movie)
+    fun validatePassword(password: String): Boolean {
+        return password == this.password
     }
 }
