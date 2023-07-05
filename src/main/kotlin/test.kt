@@ -32,16 +32,12 @@ fun main() {
         if (userInputNavigation == 1) {
             println("-- Login --")
             do {
-                println("Email:")
-                userInputEmail = readln()
-                println("Password:")
-                userInputPassword = readln()
+                println("Email:"); userInputEmail = readln()
+                println("Password:"); userInputPassword = readln()
 
                 loggedUser = userDatabase.login(userInputEmail, userInputPassword)
-
                 if (loggedUser == null)
                     println("Failed! - Wrong Email or password!")
-
             } while (loggedUser == null)
             println("Successfully logged in!")
             break

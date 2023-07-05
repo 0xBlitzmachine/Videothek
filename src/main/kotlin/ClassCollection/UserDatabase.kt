@@ -18,7 +18,7 @@ class UserDatabase {
     }
 
     fun login(email: String, password: String): User? {
-        var user: User? = getUserByEmail(email)
+        val user: User? = getUserByEmail(email)
         return if (user != null && user.validatePassword(password))
             user
         else null
