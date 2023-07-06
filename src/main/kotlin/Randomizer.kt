@@ -8,6 +8,9 @@ fun generateRatings(): MutableList<Int> {
     return ratings
 }
 
+fun generateMovies() {
+    movieList.forEach { movieDatabase.addMovie(it) }
+}
 val movieList = listOf<String>(
     "The Dark Knight",
     "Indiana Jones",

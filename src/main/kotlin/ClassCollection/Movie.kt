@@ -1,14 +1,15 @@
 package ClassCollection
+import generatePrice
+import generateRatings
+import movieDatabase
 
 class Movie(var name: String) {
-    var id: Int = 0
-    var price: Double? = null
-    var ratings: List<Int> = listOf()
+    var id: Int = autoIncrementId()
+    var price: Double = generatePrice()
+    var ratings: List<Int> = generateRatings()
 
-    init {
-        // Auto Increment of Identity Number
-        // Auto Generate Price
-        // Auto Generate Ratings
+    fun autoIncrementId(): Int {
+        return movieDatabase.highestId() + 1
     }
 }
 

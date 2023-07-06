@@ -1,11 +1,13 @@
+import ClassCollection.MovieDatabase
 import ClassCollection.UserDatabase
 import ClassCollection.User
 
+val movieDatabase = MovieDatabase()
 private val userDatabase = UserDatabase()
 private var loggedUser: User? = null
 
 fun main() {
-    userDatabase.addUser(User("test@test.com", "1234"))
+    generateMovies()
 
     do {
         println("""
@@ -13,7 +15,6 @@ fun main() {
         [2] - Sign Up
     """.trimIndent())
 
-        var registerResult: Boolean
         var userInputNavigation = 0
         var userInputEmail: String
         var userInputPassword: String
@@ -40,7 +41,35 @@ fun main() {
 
                 if (loggedUser == null)
                     println("Failed! - Wrong Email or password!")
-                else println("Successfully logged in!")
+                else {
+                    do {
+                        println("""
+                            Welcome! Choose your options
+                            Balance: ${loggedUser!!.balance}
+                        [1] - Show all available movies
+                        [2] - Show Top 3 rated movies
+                        [3] - Show Top 3 cheapest movies
+                        --------------------------------
+                        [4] - Add cash to wallet
+                        [5] - Buy a movie
+                        [6] - Your library
+                         """.trimIndent())
+                        try {
+                            userInputNavigation = readln().toInt()
+                            if (userInputNavigation > 6)
+                                throw Exception("Only six options available!")
+                        } catch (ex: Exception) {
+                            if (ex is NumberFormatException)
+                                println("You can only use numbers to navigate!")
+                            else println(ex.message)
+                        }
+
+                        when (userInputNavigation) {
+                            1 -> movieDatabase.showAllMovies()
+                        }
+                    } while (true)
+                }
+
             } while (loggedUser == null)
         } else {
             println("-- Register --") // Add check for a real email adresse. User class
@@ -48,7 +77,7 @@ fun main() {
                 println("Email:"); userInputEmail = readln()
                 println("Password:"); userInputPassword = readln()
 
-                registerResult = userDatabase.addUser(User(userInputEmail, userInputPassword))
+                var registerResult = userDatabase.addUser(User(userInputEmail, userInputPassword))
                 if (registerResult)
                     println("Registered! Welcome $userInputEmail")
                 else println("Email already in use! Try again.")
