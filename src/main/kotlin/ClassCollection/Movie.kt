@@ -8,7 +8,7 @@ class Movie(var name: String) {
     var price: Double = generatePrice()
     var ratings: List<Int> = generateRatings()
 
-    fun autoIncrementId(): Int {
+    private fun autoIncrementId(): Int {
         return movieDatabase.highestId() + 1
     }
 }
