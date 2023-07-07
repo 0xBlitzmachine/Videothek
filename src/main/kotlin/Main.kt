@@ -5,6 +5,7 @@ import ClassCollection.User
 val movieDatabase = MovieDatabase()
 private val userDatabase = UserDatabase()
 private var loggedUser: User? = null
+private var userLoggedOut = false
 
 fun main() {
     generateMovies()
@@ -21,6 +22,11 @@ fun main() {
         var userInputPassword: String
 
         do {
+            if (userLoggedOut) {
+                loggedUser = null
+                userLoggedOut = false
+            }
+
             try {
                 userInputNavigation = readln().toInt()
                 if (userInputNavigation > 2)
@@ -113,9 +119,9 @@ fun main() {
                                 val input = readln()
                                 loggedUser!!.username = input
                             }
-                            8 -> loggedUser = null
+                            8 -> userLoggedOut = true
                         }
-                    } while (loggedUser != null)
+                    } while (!userLoggedOut)
                 }
 
             } while (loggedUser == null)
