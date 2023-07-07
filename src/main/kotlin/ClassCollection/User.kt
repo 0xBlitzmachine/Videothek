@@ -16,7 +16,7 @@ class User(
 
     fun addMovie(id: Int): Movie {
         val movie = movieDatabase.getMovie(id)
-        library += movieDatabase.getMovie(id)!!
+        library += movie!!
         return movie!!
     }
 
