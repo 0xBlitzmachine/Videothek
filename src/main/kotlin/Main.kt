@@ -8,8 +8,10 @@ private var loggedUser: User? = null
 private var userLoggedOut = false
 
 fun main() {
+    // Generiere einen festen Bestandteil an Filme mit zufälligen Bewertungen & Preise
     generateMovies()
 
+    // Starte die Menü-Schleife
     do {
         println("""
         [1] - Sign In
@@ -21,12 +23,14 @@ fun main() {
         var userInputEmail: String
         var userInputPassword: String
 
+        //Für den neustart der Schleife, falls ein eingeloggter User sich einloggt.
         do {
             if (userLoggedOut) {
                 loggedUser = null
                 userLoggedOut = false
             }
 
+            // Input Handling für Menü-Navigation
             try {
                 userInputNavigation = readln().toInt()
                 if (userInputNavigation > 2)
@@ -38,6 +42,7 @@ fun main() {
             }
         } while ((userInputNavigation != 1) && (userInputNavigation != 2))
 
+        // Auswahl - Login
         if (userInputNavigation == 1) {
             println("-- Login --")
             do {
@@ -49,6 +54,7 @@ fun main() {
                 if (loggedUser == null)
                     println("Failed! - Wrong Email or password!")
 
+                // Zeige Hauptmenü falls Login erfolgreich verlief
                 else {
                     println("Welcome ${loggedUser!!.username ?: loggedUser!!.email}! Choose your options")
                     do {
@@ -65,6 +71,7 @@ fun main() {
                         [7] - Change Username
                         [8] - Logout
                          """.format(loggedUser!!.balance).trimIndent())
+                        // Menü Input Navigation
                         try {
                             userInputNavigation = readln().toInt()
                             if (userInputNavigation > 8)
