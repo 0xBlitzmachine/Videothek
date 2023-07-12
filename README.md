@@ -1,5 +1,6 @@
 # Videothek
 ### Diese App simuliert eine Videothek.
+###### Abschlussprojekt für Syntax GmbH
  
 <p> Was wurde implementiert?</p>
 <p>- Login <br>
