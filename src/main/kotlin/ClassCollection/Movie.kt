@@ -1,7 +1,8 @@
 package ClassCollection
+
 import generatePrice
 import generateRatings
-import movieDatabase
+import MOVIE_DATABASE
 
 class Movie(var name: String) {
     var id: Int = autoIncrementId()
@@ -9,7 +10,7 @@ class Movie(var name: String) {
     var ratings: List<Int> = generateRatings()
 
     private fun autoIncrementId(): Int {
-        return movieDatabase.highestId() + 1
+        return MOVIE_DATABASE.highestId() + 1
     }
 }
 

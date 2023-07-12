@@ -19,7 +19,7 @@ class MovieDatabase {
     fun showAllMovies() {
         movieCollection.forEach {
             println("""
-             ID: '${it.id}'  Name: '${it.name}'  Rating: '${it.ratings.sum() / it.ratings.size}'  Price: '%.2f'
+             ID: '${it.id}'  Name: '${it.name}'  Rating: '${it.ratings.sum() / it.ratings.size}'  Price: '$%.2f'
             """.format(it.price).trimIndent())
         }
     }

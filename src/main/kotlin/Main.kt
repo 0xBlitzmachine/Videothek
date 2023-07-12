@@ -1,10 +1,13 @@
+/*
 import ClassCollection.MovieDatabase
 import ClassCollection.UserDatabase
 import ClassCollection.User
 
-val movieDatabase = MovieDatabase()
+*/
+/*val movieDatabase = MovieDatabase()
 private val userDatabase = UserDatabase()
-private var loggedUser: User? = null
+private var loggedUser: User? = null*//*
+
 private var userLoggedOut = false
 
 fun main() {
@@ -13,10 +16,12 @@ fun main() {
 
     // Starte die Menü-Schleife
     do {
-        println("""
+        println(
+            """
         [1] - Sign In
         [2] - Sign Up
-    """.trimIndent())
+    """.trimIndent()
+        )
 
         var userInputBalance = 0.0
         var userInputNavigation = 0
@@ -58,7 +63,8 @@ fun main() {
                 else {
                     println("Welcome ${loggedUser!!.username ?: loggedUser!!.email}! Choose your options")
                     do {
-                        println("""
+                        println(
+                            """
                             Balance: %.2f
                         [1] - Show all available movies
                         [2] - Show Top 3 rated movies
@@ -70,7 +76,8 @@ fun main() {
                         --------------------------------
                         [7] - Change Username
                         [8] - Logout
-                         """.format(loggedUser!!.balance).trimIndent())
+                         """.format(loggedUser!!.balance).trimIndent()
+                        )
                         // Menü Input Navigation
                         try {
                             userInputNavigation = readln().toInt()
@@ -95,9 +102,10 @@ fun main() {
                                     }
                                     if (userInputBalance <= 0)
                                         println("Not a valid input! Try again.")
-                                } while(userInputBalance <= 0)
+                                } while (userInputBalance <= 0)
                                 loggedUser!!.balance += userInputBalance
                             }
+
                             5 -> {
                                 println("Enter the ID of the movie you want to buy:")
                                 do {
@@ -108,24 +116,26 @@ fun main() {
                                     }
                                     if (userInputNavigation > movieDatabase.allMoviesCount())
                                         println("Such ID hasn't been found")
-                                } while(userInputNavigation > movieDatabase.allMoviesCount())
+                                } while (userInputNavigation > movieDatabase.allMoviesCount())
                                 if (movieDatabase.getMovie(userInputNavigation)!!.price > loggedUser!!.balance) {
                                     println("You do not own enough money to buy this movie!")
-                                }
-                                else {
+                                } else {
                                     val movie = loggedUser!!.addMovie(userInputNavigation)
                                     loggedUser!!.balance -= movie.price
                                     println("${movie.name} has been added to your library!")
                                 }
                             }
+
                             6 -> loggedUser!!.library.forEach {
-                                println("ID:  ${it.id} - Name:  ${it.name}" )
+                                println("ID:  ${it.id} - Name:  ${it.name}")
                             }
+
                             7 -> {
                                 println("Enter your new wanted username:")
                                 val input = readln()
                                 loggedUser!!.username = input
                             }
+
                             8 -> userLoggedOut = true
                         }
                     } while (!userLoggedOut)
@@ -146,3 +156,4 @@ fun main() {
         }
     } while (true)
 }
+*/
