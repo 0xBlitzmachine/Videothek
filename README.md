@@ -37,10 +37,10 @@ Alle Funktionen wurden in Klassen aufgeteilt.
 Bestehend aus:
 
 - User
-> Beinhaltet die Eigenschaften eines Users wie Kontostand, Bibliothek usw.
+> Beinhaltet die Eigenschaften eines Users wie **Kontostand, Bibliothek** usw. User eigene Funktionen sind ebenfalls in dieser Klasse.
 - UserDatabase
 > Beinhaltet die erstellte Objekte von **User**
 - Movie
-> Beinhaltet die Eigenschaften eines Filmes wie **Name, Id, Preis, Bewertungen** etc.
+> Beinhaltet die Eigenschaften eines Filmes wie **Name, Id, Preis, Bewertungen** etc. Movie eigene Funktionen sind ebenfalls in dieser Klasse.
 - MovieDatabase
 > Beinhaltet die erstellte Objekte von **Movie**
