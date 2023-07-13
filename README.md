@@ -28,7 +28,7 @@ Alle Funktionen wurden in Klassen aufgeteilt.
 3. Falls die Registrierung fehlschlägt oder auch erfolgreich war, wird das `Login/Register` Interface aufs neuste aufgerufen.
 4. Nach einem `Login` wird das `Hauptmenü` eingeblendet.
 5. Nun kann man alle Funktionen, die zur Verfügung stehen, nutzen.
-6. Das Guthaben kann, zwecks Simulation, beliebig oft selber aufstocken. Muss größer als $1 sein.
+6. Das Guthaben kann, zwecks Simulation, beliebig oft selber aufgestockt werden. Muss größer als $1 sein.
 7. Programmfluss läuft so lange weiter, auch nach dem `Logout`, bis das Programm terminiert wird.
 
 <br>
